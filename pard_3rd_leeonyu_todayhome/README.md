@@ -1,6 +1,6 @@
 # '오늘의 집' 클론코딩
 
-OT_WEB_PART_HW1 [PARD Notion]([https://github.com/facebook/create-react-app](https://www.notion.so/we-pard/OT_WEB_PART_HW1-f0a561d68a634ef6ba705e447f6e6f0d)).
+HW1 [PARD Notion]([https://github.com/facebook/create-react-app](https://www.notion.so/we-pard/OT_WEB_PART_HW1-f0a561d68a634ef6ba705e447f6e6f0d)).
 
 ## 목표
 
@@ -10,13 +10,16 @@
 
 ## 과제 설명
 ### 1. 파일 생성하기
-`npx create-react-app pard_3rd_{영어이름}_todayhome
-ex) npx create-react-app pard_3rd_parkminzzi_todayhome`
+`npx create-react-app pard_3rd_{영어이름}_todayhome`
 ### 2. 폴더 및 파일 생성하기
 - src > Pages > RegisterPage 폴더 생성하기
 - RegisterPage > RegisterPage.js 파일 생성하기
 - App.js 파일에 RegisterPage 컴포넌트 연결하기
 
+## 결과 화면
+<p align="center">
+  <img src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Ffbd43007-20fb-4c79-907e-08fe74885f3f%2F1a94453e-d8cd-4c20-9de0-c9342763f219%2FUntitled.png?table=block&id=be4c407a-192b-409d-af19-96cf95c0f1d7&spaceId=fbd43007-20fb-4c79-907e-08fe74885f3f&width=2000&userId=fa6a87c0-1fe7-4eaa-95f8-3522b1520bd8&cache=v2">
+</p>
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
