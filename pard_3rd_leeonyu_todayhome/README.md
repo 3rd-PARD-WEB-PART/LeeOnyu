@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# '오늘의 집' 클론코딩
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
