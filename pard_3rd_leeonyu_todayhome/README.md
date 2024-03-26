@@ -1,7 +1,5 @@
 # '오늘의 집' 클론코딩
 
-HW1 [PARD Notion]([https://github.com/facebook/create-react-app](https://www.notion.so/we-pard/OT_WEB_PART_HW1-f0a561d68a634ef6ba705e447f6e6f0d)).
-
 ## 목표
 
 - React의 기본인 JSX 개념을 이해하고 적용할 수 있다.
