@@ -1,0 +1,85 @@
+.black-circle {
+  width: 500px; 
+  height: 500px; 
+  background-color: black; /* 원의 색상 */
+  border-radius: 50%; /* 원형 모양 */
+  position: absolute; /* 위치 지정 */
+  margin-left: 100px; 
+  margin-top: -90px; 
+  z-index: 1; /* 다른 요소 위에 표시 */
+}
+
+.white-circle {
+  width: 400px; 
+  height: 400px; 
+  background-color: white; 
+  border-radius: 50%; 
+  position: absolute; 
+  margin-left: 50px;
+  margin-top: 50px;
+  z-index: 2; /* 다른 요소 위에 표시 */
+}
+
+.image {
+  width: 285px; 
+  height: auto; /* 높이를 자동으로 조절하여 이미지의 가로세로 비율을 유지 */
+  position: absolute; /* 절대 위치 지정 */
+  margin-left: 200px; 
+  margin-top: 150px; 
+  transform: translate(-50%, -50%); /* 가운데 정렬 */
+}
+
+.text-space {
+  margin-left: 30px;
+  margin-top: 150px;
+  position: relative;
+}
+
+.text-space2 {
+  margin-left: 30px;
+  margin-top: -40px;
+  position: relative;
+}
+
+.name-space {
+  margin-top: 530px;
+  margin-left: 40px;
+  width: 500px;
+  height: 200px;
+  font-size: 45pt;
+  font-family: 'GangwonEduHyeonokT_OTFMediumA';
+}
+
+.bold {
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-left: 150px;
+}
+
+@font-face { 
+  font-family: 'GangwonEduHyeonokT_OTFMediumA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduHyeonokT_OTFMediumA.woff') format('woff'); /* 외부에서 텍스트 가져오기 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text {
+  font-family: 'GangwonEduHyeonokT_OTFMediumA';
+  margin-left: 50vw;
+  margin-top: 70px;
+  position: relative; 
+  margin-top: 100px; 
+  font-size: 45pt;  
+  font-weight: bold;
+  width: 500px;
+  border-bottom: 5px solid black;
+}
+
+.sub-text {
+  font-family: 'GangwonEduHyeonokT_OTFMediumA';
+  margin-left: 50vw;
+  position: relative; 
+  margin-top: -30px; 
+  font-size: 30pt;  
+  width: 500px;   
+}
