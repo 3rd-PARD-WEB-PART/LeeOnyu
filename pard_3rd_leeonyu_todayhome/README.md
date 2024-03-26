@@ -1,12 +1,21 @@
 # '오늘의 집' 클론코딩
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+OT_WEB_PART_HW1 [PARD Notion]([https://github.com/facebook/create-react-app](https://www.notion.so/we-pard/OT_WEB_PART_HW1-f0a561d68a634ef6ba705e447f6e6f0d)).
 
-## Available Scripts
+## 목표
 
-In the project directory, you can run:
+- React의 기본인 JSX 개념을 이해하고 적용할 수 있다.
+- 컴포넌트를 생성하고 이를 사용할 수 있다.
+- Props를 이해하고 컴포넌트 간의 값을 공유할 수 있다.
 
-### `npm start`
+## 과제 설명
+### 1. 파일 생성하기
+`npx create-react-app pard_3rd_{영어이름}_todayhome
+ex) npx create-react-app pard_3rd_parkminzzi_todayhome`
+### 2. 폴더 및 파일 생성하기
+- src > Pages > RegisterPage 폴더 생성하기
+- RegisterPage > RegisterPage.js 파일 생성하기
+- App.js 파일에 RegisterPage 컴포넌트 연결하기
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
