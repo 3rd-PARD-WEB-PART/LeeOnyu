@@ -1,9 +1,10 @@
-import RegisterPage from './Pages/RegisterPage/RegisterPage'; 
+import RegisterPage from './Pages/RegisterPage/RegisterPage';
+import Profile from './Pages/RegisterPage/Profile';
 
 function App() {
     return (
         <div>
-            <RegisterPage />
+            <Profile />
         </div>
     );
 }
