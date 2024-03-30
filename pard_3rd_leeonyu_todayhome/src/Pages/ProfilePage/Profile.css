@@ -39,6 +39,21 @@
     border:#dbdbdb 1px solid;
 }
 
+.item-container{
+    margin-left: 150px;
+    width: 750px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 아이템 나열 */
+}
+
+.add-container{
+    width: 750px;
+    height: 290px;
+    background-color: white;
+
+}
 .info-container{
     width: 220px;
     height: 320px;
@@ -46,7 +61,7 @@
     display: flex;
     align-items: center; /* 세로 방향 가운데 정렬 */
     justify-content: center; /* 가로 방향 가운데 정렬 */
-    flex-direction: column; /* 세로 방향으로 아이템 나열*/
+    flex-direction: column; /* 세로 방향으로 아이템 나열 */
     border-bottom: #dbdbdb 1px solid;
     
 }
@@ -68,6 +83,7 @@
     align-items: center; /* 세로 방향 가운데 정렬 */
     flex-direction: column; /* 세로 방향으로 아이템 나열*/
     background-color: white;
+    font-size:0;
 }
 
 .logo-img{
@@ -88,6 +104,16 @@
     height: 43px;
     border-radius: 3px;
     border: 1px solid #dbdbdb;
+}
+
+.add2-container{
+    width: 750px;
+    height: 188px;
+    border: #757575 1px dashed;
+    margin-top: 20px;
+    display: flex;
+    align-items: center; /* 세로 방향 가운데 정렬 */
+    justify-content: center; /* 가로 방향 가운데 정렬 */
 }
 
 .search-img{
@@ -124,7 +150,7 @@ num {
     height: 35px;
     background-color: white;
     font-size: 13px;
-    margin-top: -15px;
+    margin-top: 0px;
     border-radius: 5px;
     border:#dbdbdb 1px solid;
 }

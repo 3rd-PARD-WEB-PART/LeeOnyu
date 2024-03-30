@@ -1,10 +1,11 @@
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
-import Profile from './Pages/RegisterPage/Profile';
+import Profile from './Pages/ProfilePage/Profile';
 
 function App() {
     return (
         <div>
             <Profile />
+            {/* <RegisterPage/> */}
         </div>
     );
 }

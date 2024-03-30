@@ -7,10 +7,20 @@ import profile from './img/profile.png'
 import vector from './img/Vector4.png'
 import like from './img/like.png'
 import coupon from './img/coupon.png'
+import red from './img/red.png'
 import './Profile.css';
 import styled from "styled-components";
+import React, {useState, useEffect} from 'react';
 
 function Profile(){
+    const [likes, setLikes] = useState(0);
+
+    function handleLike() {
+        setLikes(likes + 1);
+        document.getElementById("img").src = red;
+        console.log("좋아요를 눌렀습니다!");
+    }
+
     return(
         <div>
             <div className="header-container">
@@ -46,12 +56,9 @@ function Profile(){
             <div className='main-container'>
                 <div className='profile-container'>
                     <div className='info-container'>
-                        <p>
-                        <img src={profile} width='130px' hegiht='130px' alt='profile'></img><br></br><br></br>
-                        <pre><Text fontSize='26px' FontWeight='bold' MarginTop='-20px'>이온유</Text>
-                        <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text>
-                        </pre>                        
-                        </p>
+                        <img src={profile} width='130px' hegiht='130px' alt='profile'></img><br></br>
+                        <Text fontSize='26px' FontWeight='bold'>이온유</Text>
+                        <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                         <button className='set-button'>설정</button>                        
                     </div>
                     <div className='like-container'>
@@ -61,14 +68,30 @@ function Profile(){
                             <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>0</Text>
                         </div>
                         <div className='icon-container'>
-                            <img src={like} width='30px' hegiht='25.91px' alt='icon1'></img>
-                            <Text fontSize='13px' MarginTop='10px'> 스크랩북</Text>
-                            <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>0</Text>
+                            <IconButton Width='30px' Height='25.91px' onClick={handleLike}><img id='img' src={like}  alt='icon1' ></img></IconButton>
+                            <Text fontSize='13px' MarginTop='10px'> 좋아요</Text>
+                            <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>{likes}</Text>
                         </div>
                         <div className='icon-container'>
                             <img src={coupon}  width='28.5px' hegiht='21.92px'  alt='icon1'></img>
-                            <Text fontSize='13px' MarginTop='10px' width='30px' hegiht='26px'> 스크랩북</Text>
+                            <Text fontSize='13px' MarginTop='10px' width='30px' hegiht='26px'>내 쿠폰</Text>
                             <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>0</Text>
+                        </div>
+                    </div>
+                </div>
+                <div className='item-container'>
+                    <div className='add-container'>
+                        <Text fontSize='18px' FontWeight='bold' MarginTop='50px'>사진&nbsp;</Text>
+                        <Text fontSize='18px' FontWeight='bold' Color='#35c5f0'>0</Text>
+                        <div className='add2-container'>
+                            <Text fontSize='13px' Color='#757575' FontWeight='bold'>+ 첫 번째 사진을 올려보세요</Text>
+                        </div>
+                    </div>
+                    <div className='add-container'>
+                        <Text fontSize='18px' FontWeight='bold' MarginTop='50px'>집들이&nbsp;</Text>
+                        <Text fontSize='18px' FontWeight='bold' Color='#35c5f0'>0</Text>
+                        <div className='add2-container'>
+                            <Text fontSize='13px' Color='#757575' FontWeight='bold'>+ 첫 번째 집들이를 올려보세요</Text>
                         </div>
                     </div>
                 </div>
@@ -96,6 +119,7 @@ const HeadButton = styled.button`
 
 const IconButton = styled.button`
     background-color: white;
+    line-height: 0;
     border: none;
     width: ${(props) => props.Width};  //props로 width가변값으로 만들기
     padding: 0px;
@@ -114,12 +138,9 @@ export const Text = styled.div`
     font-weight: ${(props) => props.FontWeight};
     font-size: ${(props) => props.fontSize};
     text-align: center; /* 글자 가운데 정렬 */
-    color: black;
+    color: ${(props) => props.Color || "#000000"}; //검정색을 디폴드 값으로 지정
+    display: inline-block; /* 텍스트를 한 줄로 표시 */
 `;
 
-//초기 색상을 검정으로 지정
-Text.defaultProps = {
-    color: 'black',
-};
 
 export default Profile;
