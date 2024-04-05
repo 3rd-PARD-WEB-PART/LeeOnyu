@@ -1,11 +1,13 @@
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import Profile from './Pages/ProfilePage/Profile';
+import EditProfile from './Pages/EditPage/EditProfile'
 
 function App() {
     return (
         <div>
-            <Profile />
+            {/* <Profile /> */}
             {/* <RegisterPage/> */}
+            <EditProfile/>
         </div>
     );
 }
