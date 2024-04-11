@@ -45,12 +45,13 @@ function Profile(){
                 <HeadButton fontSize ="18px" MarginLeft='40px'>설정</HeadButton>
             </div>
             <div className='header2-container'>
-                <HeadButton fontSize ="15px" MarginLeft='40px' Color='#35c5f0'>회원정보수정</HeadButton>
-                <HeadButton fontSize ="15px" MarginLeft='40px'>알림 설정</HeadButton>
-                <HeadButton fontSize ="15px" MarginLeft='40px'>사용자 숨기기 설정</HeadButton>
-                <HeadButton fontSize ="15px" MarginLeft='40px'>전문가 신청</HeadButton>
-                <HeadButton fontSize ="15px" MarginLeft='40px'>비밀번호 변경</HeadButton>
-                <HeadButton fontSize ="15px" MarginLeft='40px'>추천코드</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px' Color='#35c5f0'>모두보기</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>사진</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>집들이</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>노하우</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>질문과 답변</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>스크랩북</HeadButton>
+                <HeadButton fontSize ="15px" MarginLeft='40px'>좋아요</HeadButton>
             </div>
             <div className='main-container'>
                 <div className='profile-container'>

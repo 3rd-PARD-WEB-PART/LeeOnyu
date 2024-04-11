@@ -6,11 +6,11 @@ function RegisterPage() {
     return (
         <div className='container'>
             <div className='header'>
-                <img className='logo-img' alt='logo' src={logo}></img>
+                <img className='rlogo-img' alt='logo' src={logo}></img>
             </div>
             <div className='input-container'>
-                <div className='main-container'>
-                    <p className='title-text'>회원가입</p>
+                <div className='regis-container'>
+                    <p className='rtitle-text'>회원가입</p>
                     <p className='sub-text'>이메일</p>
                     <input id='input' type='text' placeholder='이메일'></input>
                     <p className='sub-text'>비밀번호</p>

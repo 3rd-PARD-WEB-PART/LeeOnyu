@@ -3,6 +3,7 @@ import Profile from './Pages/ProfilePage/Profile';
 import EditProfile from './Pages/EditPage/EditProfile'
 
 function App() {
+    
     return (
         <div>
             {/* <Profile /> */}

@@ -25,15 +25,16 @@
     justify-content: center;
 }
 
-.main-container{
+.regis-container{
     width: 360px;
     height: 690px;
     background-color: white;
 }
 
 
-.logo-img{
+.rlogo-img{
     /* position: absolute; */
+    margin-left: 10px;
     width: 89.42px;
     height: 31px;
     padding-left: 20px;
@@ -44,7 +45,7 @@ body{
     background-color: #dbdbdb;
 }
 
-.title-text{
+.rtitle-text{
     margin-top: 20px;
     font-weight: bold; /* 볼드체 */
     font-size: 20px;
