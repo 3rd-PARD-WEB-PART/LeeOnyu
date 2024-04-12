@@ -3,6 +3,7 @@ import search from '../ProfilePage/img/search.png';
 import icon1 from '../ProfilePage/img/icon1.png'
 import icon2 from '../ProfilePage/img/icon2.png'
 import icon3 from '../ProfilePage/img/icon3.png'
+import proimg from '../ProfilePage/img/proimg.jpg'
 import profile from '../ProfilePage/img/profile.png'
 import vector from '../ProfilePage/img/Vector4.png'
 import '../ProfilePage/Profile.css';
@@ -122,7 +123,7 @@ function EditProfile(){
                                 {profileImage ? (
                                 <img src={profileImage} width='200px' height='200px' alt="프로필 이미지" />
                                 ) : (
-                                <img src={profile} width='200px' height='200px' alt="프로필 이미지" />
+                                <img src={proimg} width='200px' height='200px' alt="프로필 이미지" />
                                 )}
                             </label>
                             </div>
