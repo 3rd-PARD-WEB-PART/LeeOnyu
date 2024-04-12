@@ -11,15 +11,16 @@ import red from './img/red.png'
 import './Profile.css';
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom'; // Link 가져오기
 
 function Profile(){
     const [likes, setLikes] = useState(0);
-
     function handleLike() {
         setLikes(likes + 1);
         document.getElementById("img").src = red;
         console.log("좋아요를 눌렀습니다!");
     }
+
 
     return(
         <div>
@@ -42,7 +43,10 @@ function Profile(){
                 <HeadButton fontSize ="18px" MarginLeft='40px' Color='#35c5f0'>프로필</HeadButton>
                 <HeadButton fontSize ="18px" MarginLeft='40px'>나의 쇼핑</HeadButton>
                 <HeadButton fontSize ="18px" MarginLeft='40px'>나의 리뷰</HeadButton>
-                <HeadButton fontSize ="18px" MarginLeft='40px'>설정</HeadButton>
+                {/* StyledLink를 사용하여 스타일이 지정된 Link 컴포넌트로 버튼을 감싸기 */}
+                <StyledLink to="/edit">
+                    <HeadButton fontSize="18px" MarginLeft="40px">설정</HeadButton>
+                </StyledLink>
             </div>
             <div className='header2-container'>
                 <HeadButton fontSize ="15px" MarginLeft='40px' Color='#35c5f0'>모두보기</HeadButton>
@@ -59,7 +63,7 @@ function Profile(){
                         <img src={profile} width='130px' hegiht='130px' alt='profile'></img><br></br>
                         <Text fontSize='26px' FontWeight='bold'>이온유</Text>
                         <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
-                        <button className='set-button'>설정</button>                        
+                        <Link to="/edit" className="set-button">설정</Link>                       
                     </div>
                     <div className='like-container'>
                         <div className='icon-container'>
@@ -116,6 +120,12 @@ const HeadButton = styled.button`
         color: #35c5f0;
     }
     `;
+
+const StyledLink = styled(Link)`
+    /* Link에 적용할 스타일 */
+    text-decoration: none; /* 밑줄 없애기 */
+    color: inherit; /* 부모 요소로부터 상속받은 색상 사용 */
+`;
 
 const IconButton = styled.button`
     background-color: white;

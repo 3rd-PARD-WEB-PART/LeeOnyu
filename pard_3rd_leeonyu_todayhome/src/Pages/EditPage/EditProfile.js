@@ -10,6 +10,7 @@ import '../ProfilePage/Profile.css';
 import './EditPage.css'
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 
 function EditProfile(){ 
@@ -146,7 +147,9 @@ function EditProfile(){
                     </Container>
                     <div className='id-title'> {/* 회원정보수정 타이틀 */}
                         <Container Width='1000px' Height='50px' MarginLeft='40px'></Container>
-                        <button className='write-button'>수정하기</button>                                  
+                        <StyledLink to='/profile'>
+                            <button className='write-button'>수정하기</button>                                  
+                        </StyledLink>
                     </div>
                 </div>
             </div>
@@ -170,6 +173,11 @@ const HeadButton = styled.button`
         color: #35c5f0;
     }
     `;
+
+const StyledLink = styled(Link)`
+    text-decoration: none; /* 밑줄 없애기 */
+    color: inherit; /* 부모 요소로부터 상속받은 색상 사용 */
+`;
 
 const IconButton = styled.button`
     background-color: white;
