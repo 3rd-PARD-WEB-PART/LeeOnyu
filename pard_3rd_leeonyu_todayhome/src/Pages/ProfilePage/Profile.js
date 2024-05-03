@@ -30,9 +30,11 @@ function Profile(){
                 <HeadButton fontSize ="18px" MarginLeft='30px'>쇼핑</HeadButton>
                 <HeadButton fontSize ="18px" MarginLeft='30px'>인테리어/생활</HeadButton>
                 <div className='search-container'>
-                    <img className='search-img' alt='search' src={search}></img>
+                    <img className='search-img' alt='search1' src={search}></img>
                     <input className='search-input' type='text' placeholder='통합검색'></input>
                 </div>
+                <IconButton Width='18px' Height='18.5px' MarginLeft='25px'><img src={search} alt='search'></img></IconButton>
+                
                 <IconButton Width='18px' Height='18.5px' MarginLeft='35px'><img src={icon1} alt='icon1'></img></IconButton>
                 <IconButton Width='18px' Height='18.5px' MarginLeft='25px'><img src={icon2} alt='icon2'></img></IconButton>
                 <IconButton Width='18px' Height='18.5px' MarginLeft='25px'><img src={icon3} alt='icon3'></img></IconButton>
