@@ -67,6 +67,16 @@ function Profile(){
                         <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                         <Link to="/edit" className="set-button">설정</Link>                       
                     </div>
+                    <div className='profile-info'>
+                        <div className='info-img'>
+                            <img src={profile} width='130px' hegiht='130px' alt='profile'></img>
+                        </div>
+                        <div className='info-word'>
+                            <Text fontSize='26px' FontWeight='bold' MarginLeft='-30px'>이온유</Text>
+                            <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
+                            <Link to="/edit" className="set-button">설정</Link> 
+                        </div>
+                    </div>
                     <div className='like-container'>
                         <div className='icon-container'>
                             <img src={icon1} width='23px' hegiht='24.9px' alt='icon1'></img>
@@ -145,6 +155,7 @@ const IconButton = styled.button`
 
 
 export const Text = styled.div`
+    margin-left: ${(props) => props.MarginLeft};
     margin-top: ${(props) => props.MarginTop};
     color: #a2a2a2;
     font-weight: ${(props) => props.FontWeight};
