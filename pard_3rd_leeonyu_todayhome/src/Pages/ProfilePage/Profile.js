@@ -8,6 +8,7 @@ import vector from './img/Vector4.png'
 import like from './img/like.png'
 import coupon from './img/coupon.png'
 import red from './img/red.png'
+import menu from './img/menu.png'
 import './Profile.css';
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
@@ -41,6 +42,18 @@ function Profile(){
                 <IconButton Width='43px' Height='43px' MarginLeft='25px'><img src={profile} alt='profile'></img></IconButton>
                 <button className='write-button'>글쓰기 <img src={vector} alt='vextor'></img></button>
             </div>
+            <div className="header-mobile">
+                <div className='mobile-icon'>
+                    <IconButton Width='18px' Height='18.5px' MarginLeft='10px'><img width='25px'src={menu} alt='search'></img></IconButton>
+                </div>
+                <div className='logo-container'>
+                    <img className='logo-img' alt='logo' src={logo}></img>
+                </div>
+                <div className='mobile-icon'>
+                    <IconButton Width='18px' Height='18.5px' MarginLeft='25px'><img src={search} alt='search'></img></IconButton>
+                    <IconButton Width='18px' Height='18.5px' MarginLeft='25px'><img src={icon3} alt='icon3'></img></IconButton>
+                </div>
+            </div>
             <div className='header2-container'>
                 <HeadButton fontSize ="18px" MarginLeft='40px' Color='#35c5f0'>프로필</HeadButton>
                 <HeadButton fontSize ="18px" MarginLeft='40px'>나의 쇼핑</HeadButton>
@@ -51,7 +64,7 @@ function Profile(){
                 </StyledLink>
             </div>
             <div className='header2-container'>
-                <HeadButton fontSize ="15px" MarginLeft='40px' Color='#35c5f0'>모두보기</HeadButton>
+                <HeadButton fontSize ="15px" Color='#35c5f0'>모두보기</HeadButton>
                 <HeadButton fontSize ="15px" MarginLeft='40px'>사진</HeadButton>
                 <HeadButton fontSize ="15px" MarginLeft='40px'>집들이</HeadButton>
                 <HeadButton fontSize ="15px" MarginLeft='40px'>노하우</HeadButton>
@@ -69,7 +82,7 @@ function Profile(){
                     </div>
                     <div className='profile-info'>
                         <div className='info-img'>
-                            <img src={profile} width='130px' hegiht='130px' alt='profile'></img>
+                            <img src={profile} width = '100%' alt='profile'></img>
                         </div>
                         <div className='info-word'>
                             <Text fontSize='26px' FontWeight='bold' MarginLeft='-30px'>이온유</Text>
