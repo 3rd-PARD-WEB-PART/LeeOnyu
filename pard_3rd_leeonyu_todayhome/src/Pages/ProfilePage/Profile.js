@@ -13,6 +13,8 @@ import './Profile.css';
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'; // Link 가져오기
+import { useRecoilValue } from 'recoil'; 
+import { registerInfoState } from '../Atom';
 
 function Profile(){
     const [likes, setLikes] = useState(0);
@@ -22,6 +24,7 @@ function Profile(){
         console.log("좋아요를 눌렀습니다!");
     }
 
+    const registerInfo = useRecoilValue(registerInfoState);
 
     return(
         <div>
@@ -75,8 +78,8 @@ function Profile(){
             <div className='main-container'>
                 <div className='profile-container'>
                     <div className='info-container'>
-                        <img src={profile} width='130px' hegiht='130px' alt='profile'></img><br></br>
-                        <Text fontSize='26px' FontWeight='bold'>이온유</Text>
+                        <img src={profile} width='130px' height='130px' alt='profile'></img><br></br>
+                        <Text fontSize='26px' FontWeight='bold'>{registerInfo.nickname}</Text>
                         <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                         <Link to="/edit" className="set-button">설정</Link>                       
                     </div>
@@ -85,14 +88,14 @@ function Profile(){
                             <img src={profile} width = '100%' alt='profile'></img>
                         </div>
                         <div className='info-word'>
-                            <Text fontSize='26px' FontWeight='bold' MarginLeft='-30px'>이온유</Text>
+                            <Text fontSize='26px' FontWeight='bold'>{registerInfo.nickname}</Text>
                             <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                             <Link to="/edit" className="set-button">설정</Link> 
                         </div>
                     </div>
                     <div className='like-container'>
                         <div className='icon-container'>
-                            <img src={icon1} width='23px' hegiht='24.9px' alt='icon1'></img>
+                            <img src={icon1} width='23px' height='24.9px' alt='icon1'></img>
                             <Text fontSize='13px' MarginTop='10px'> 스크랩북</Text>
                             <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>0</Text>
                         </div>
@@ -102,8 +105,8 @@ function Profile(){
                             <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>{likes}</Text>
                         </div>
                         <div className='icon-container'>
-                            <img src={coupon}  width='28.5px' hegiht='21.92px'  alt='icon1'></img>
-                            <Text fontSize='13px' MarginTop='10px' width='30px' hegiht='26px'>내 쿠폰</Text>
+                            <img src={coupon}  width='28.5px' height='21.92px'  alt='icon1'></img>
+                            <Text fontSize='13px' MarginTop='10px' width='30px' height='26px'>내 쿠폰</Text>
                             <Text fontSize='13px' FontWeight='bold' MarginTop='5px'>0</Text>
                         </div>
                     </div>

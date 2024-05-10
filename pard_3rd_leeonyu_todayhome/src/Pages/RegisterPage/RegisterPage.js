@@ -3,8 +3,21 @@ import React from 'react';
 import logo from './img/logo.png';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { registerInfoState } from '../Atom';
+import { useRecoilState } from 'recoil';
 
 function RegisterPage() {
+    const [registerInfo, setRegisterInfo] = useRecoilState(registerInfoState);
+
+    // Define handleInputChange function to update the registerInfo state
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setRegisterInfo((prevInfo) => ({
+            ...prevInfo,
+            [name]: value
+        }));
+    };
+
     return (
         <div className='container'>
             <div className='header'>
@@ -14,15 +27,15 @@ function RegisterPage() {
                 <div className='regis-container'>
                     <p className='rtitle-text'>회원가입</p>
                     <p className='sub-text'>이메일</p>
-                    <input id='input' type='text' placeholder='이메일'></input>
+                    <input className='input-style' type="text" name="email" value={registerInfo.email} onChange={handleInputChange} placeholder="이메일" />
                     <p className='sub-text'>비밀번호</p>
                     <p className='sub-text'>영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
-                    <input id='input' type='text' placeholder='비밀번호'></input>
+                    <input className='input-style' type="password" name="password" value={registerInfo.password} onChange={handleInputChange} placeholder="비밀번호" />
                     <p className='sub-text'>비밀번호 확인</p>
-                    <input id='input' type='text' placeholder='비밀번호 확인'></input>
+                    <input className='input-style' id='input' type='password' placeholder='비밀번호 확인'></input>
                     <p className='sub-text'>닉네임</p>
                     <p className='sub-text'>다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</p>
-                    <input id='input' type='text' placeholder='별명 (2~15자)'></input>
+                    <input className='input-style' type="text" name="nickname" value={registerInfo.nickname} onChange={handleInputChange} placeholder="닉네임" />
                     <StyledLink to='/profile'>
                         <button className='btu-font'>회원가입하기</button>
                     </StyledLink>

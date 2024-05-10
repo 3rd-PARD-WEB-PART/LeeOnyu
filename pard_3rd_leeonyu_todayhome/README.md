@@ -1,3 +1,24 @@
+# HW#4
+${\textsf{\color{green}Red}}$ 지각 제출
+## 과제 목표
+- 전역 상태 라이브러리 Recoil을 사용할 수 있다.
+- 반응형 웹 디자인을 구축할 수 있다.
+
+### 반응형 웹
+#### labtop
+![alt text](image-4.png)
+
+#### tablet
+![alt text](image-5.png)
+
+#### mobile
+![alt text](image-6.png)
+
+### Recoil
+![alt text](image-7.png) ![alt text](image-8.png) ![alt text](image-9.png)
+
+이메일과 비밀번호 저장 및 수정
+
 # WEB_PART HW#2, HW#3
 ## 과제 목표
 - React의 Router 라이브러리를 사용할 수 있다.

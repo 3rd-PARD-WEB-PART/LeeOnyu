@@ -11,7 +11,8 @@ import './EditPage.css'
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-
+import { useRecoilState } from 'recoil'; 
+import { registerInfoState } from '../Atom';
 
 function EditProfile(){ 
     const [profileImage, setProfileImage] = useState(null);
@@ -29,6 +30,16 @@ function EditProfile(){
         }
     };
 
+    const [registerInfo, setRegisterInfo] = useRecoilState(registerInfoState);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setRegisterInfo((prevInfo) => ({
+            ...prevInfo,
+            [name]: value
+        }));
+    };
+    
     return(
         <div>
             <div className="header-container">
@@ -72,9 +83,7 @@ function EditProfile(){
                     <Container Height='45px'>
                         <p><Text fontSize='15px'>이메일</Text><br></br><Text fontSize='15px' Color='#757575'>* 필수항목</Text></p>                        
                         <Container Width='400px' Height='40px'>
-                            <Input Width='190px' Height='40px'></Input>
-                            <Text fontSize='15px' Color='#dbdbdb' MarginLeft='5px'>@</Text>
-                            <Input Width='190px' Height='40px' MarginLeft='5px'></Input>
+                            <Input type="text" name="email" value={registerInfo.email} onChange={handleInputChange} placeholder="이메일" />
                         </Container>
                     </Container>
                     {/* 이메일 변경 글씨 */}
@@ -85,25 +94,25 @@ function EditProfile(){
                     <Container Height='45px' MarginTop='20px'>
                         <p><Text fontSize='15px'>별명</Text><br></br><Text fontSize='15px' Color='#757575'>* 필수항목</Text></p>                        
                         <Container Width='400px' Height='40px' >
-                            <Input Width='400px' Height='40px'></Input>
+                            <Input type="text" name="nickname" value={registerInfo.nickname} onChange={handleInputChange} placeholder="별명" />
                         </Container>
                     </Container>
                     {/* 홈페이지 입력칸 */}
                     <Container Height='45px' MarginTop='30px'>
                         <Text fontSize='15px' MarginRight='10px'>홈페이지</Text>                      
                         <Container Width='400px' Height='40px' >
-                            <Input Width='400px' Height='40px'></Input>
+                            <Input type="text" name="homepage" value={registerInfo.homepage} onChange={handleInputChange} placeholder="홈페이지" />
                         </Container>
                     </Container>
                     <Container Height='45px' MarginTop='20px'>
                         <Text fontSize='15px' MarginRight='35px'>성별</Text>                      
                         <Container Width='400px' Height='40px'>
                             <label class='radio-label'>
-                                <input type="radio" name="contact" value="phone" />
+                            <input type="radio" name="gender" value={registerInfo.gender} onChange={handleInputChange}/>
                                 <span>여성</span>
                             </label>
                             <label class='radio-label'>
-                                <input type="radio" name="contact" value="phone" />
+                            <input type="radio" name="gender" value={registerInfo.gender} onChange={handleInputChange}/>
                                 <span>남성</span>
                             </label>
                         </Container>
@@ -112,7 +121,7 @@ function EditProfile(){
                     <Container Height='45px' MarginTop='20px'>
                         <Text fontSize='15px' MarginRight='10px'>생년월일</Text>                      
                         <Container Width='400px' Height='40px' >
-                            <Input Width='400px' Height='40px'></Input>
+                            <Input type="text" name="birth" value={registerInfo.date} onChange={handleInputChange} placeholder="생년월일" />
                         </Container>
                     </Container>
                     <Container Height='230px' MarginTop='30px' Align='flex-start'>
@@ -142,7 +151,7 @@ function EditProfile(){
                     <Container Height='45px' MarginTop='20px'>
                         <Text fontSize='15px' MarginRight='10px'>한줄 소개</Text>                      
                         <Container Width='400px' Height='40px' >
-                            <Input Width='400px' Height='40px'></Input>
+                        <Input type="text" name="introduce" value={registerInfo.introduce} onChange={handleInputChange} placeholder="한줄 소개" />
                         </Container>
                     </Container>
                     <div className='id-title'> {/* 회원정보수정 타이틀 */}

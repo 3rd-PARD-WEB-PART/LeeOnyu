@@ -68,7 +68,7 @@ body{
     justify-content: center; /* 가로 방향 가운데 정렬 */
 }
 
-#input{
+.input-style{
     margin-top: 0px;
     width: 359px;
     height: 40px;
@@ -80,7 +80,7 @@ body{
 
 /* placeholder을 편집할 수 있는 기능 */
 /* #은 id에 적용되는 css를 나타냄 */
-#input::placeholder{
+.input-style::placeholder{
     margin-left: 100px;
     font-size: 15px;
     padding-left: 10px; /* 내부 여백 설정 */
@@ -107,14 +107,14 @@ button{
 }
 
 /* input창을 클릭했을 때 효과 */
-#input {
+.input-style {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* 초기에 그림자 없음 */
     transition: border-color 0.5s, box-shadow 0.5s; /* 변화 시 부드러운 효과 적용 */
     padding-left: 10px; 
     outline: none; /* 포커스 시 테두리 제거 */
 }
 
-#input:focus {
+.input-style:focus {
     border-color: #ccc; /* 포커스 시 테두리 색상 변경 */
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* 포커스 시 그림자 생성 */
 }
