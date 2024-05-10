@@ -1,5 +1,5 @@
 # HW#4
-${\textsf{\color{green}Red}}$ 지각 제출
+${\textsf{\color{red}지각 제출}}
 ## 과제 목표
 - 전역 상태 라이브러리 Recoil을 사용할 수 있다.
 - 반응형 웹 디자인을 구축할 수 있다.
@@ -9,13 +9,13 @@ ${\textsf{\color{green}Red}}$ 지각 제출
 ![alt text](image-4.png)
 
 #### tablet
-![alt text](image-5.png)
+<img src="image-5.png" alt="alternative text" width="700" height="auto">
 
 #### mobile
-![alt text](image-6.png)
+<img src="image-5.png" alt="alternative text" width="500" height="auto">
 
 ### Recoil
-<img src="image-7.png" alt="alternative text" width="300" height="200"><img src="image-8.png" alt="alternative text" width="300" height="200"> <img src="image-9.png" alt="alternative text" width="300" height="200">
+<img src="image-7.png" alt="alternative text" width="300" height="auto"><img src="image-8.png" alt="alternative text" width="300" height="auto"> <img src="image-9.png" alt="alternative text" width="400" height="auto">
 
 이메일과 비밀번호 저장 및 수정
 
