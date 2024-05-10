@@ -15,7 +15,7 @@ ${\textsf{\color{green}Red}}$ 지각 제출
 ![alt text](image-6.png)
 
 ### Recoil
-![alt text](image-7.png) ![alt text](image-8.png) ![alt text](image-9.png)
+<img src="image-7.png" alt="alternative text" width="300" height="200"><img src="image-8.png" alt="alternative text" width="300" height="200"> <img src="image-9.png" alt="alternative text" width="300" height="200">
 
 이메일과 비밀번호 저장 및 수정
 
