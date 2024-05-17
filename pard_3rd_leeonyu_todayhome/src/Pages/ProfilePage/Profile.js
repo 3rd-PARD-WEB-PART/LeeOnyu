@@ -13,18 +13,30 @@ import './Profile.css';
 import styled from "styled-components";
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'; // Link 가져오기
-import { useRecoilValue } from 'recoil'; 
-import { registerInfoState } from '../Atom';
+// import { useRecoilValue } from 'recoil'; 
+// import { registerInfoState } from '../Atom';
+import { getUserData } from '../../AxiosAPI'; // getUserData 함수 추가
 
 function Profile(){
     const [likes, setLikes] = useState(0);
+    const [userData, setUserData] = useState({}); // API로 받아온 데이터를 저장할 state 추가
     function handleLike() {
         setLikes(likes + 1);
         document.getElementById("img").src = red;
         console.log("좋아요를 눌렀습니다!");
     }
 
-    const registerInfo = useRecoilValue(registerInfoState);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getUserData(1); // 예시로 사용자 ID가 1인 데이터 가져오기
+                setUserData(response.data); // 가져온 데이터를 state에 저장
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+        fetchData();
+    }, []); // 마운트될 때 한 번만 실행
 
     return(
         <div>
@@ -79,7 +91,7 @@ function Profile(){
                 <div className='profile-container'>
                     <div className='info-container'>
                         <img src={profile} width='130px' height='130px' alt='profile'></img><br></br>
-                        <Text fontSize='26px' FontWeight='bold'>{registerInfo.nickname}</Text>
+                        <Text fontSize='26px' FontWeight='bold'>{userData.nickname}</Text>
                         <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                         <Link to="/edit" className="set-button">설정</Link>                       
                     </div>
@@ -88,7 +100,7 @@ function Profile(){
                             <img src={profile} width = '100%' alt='profile'></img>
                         </div>
                         <div className='info-word'>
-                            <Text fontSize='26px' FontWeight='bold'>{registerInfo.nickname}</Text>
+                            <Text fontSize='26px' FontWeight='bold'>{userData.nickname}</Text>
                             <Text fontSize='13px' MarginTop='10px'>팔로워 <num>0</num>  팔로잉 <num>0</num></Text><br></br>
                             <Link to="/edit" className="set-button">설정</Link> 
                         </div>

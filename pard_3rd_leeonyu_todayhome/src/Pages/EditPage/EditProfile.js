@@ -13,10 +13,48 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil'; 
 import { registerInfoState } from '../Atom';
+import { patchUserData, getUserData } from '../../AxiosAPI';
 
 function EditProfile(){ 
     const [profileImage, setProfileImage] = useState(null);
+    const [userData, setUserData] = useState({}); // 유저 데이터를 저장할 state 추가
+    const [registerInfo, setRegisterInfo] = useRecoilState(registerInfoState);
+    const [isModified, setIsModified] = useState(false); // 수정된 사항이 있는지 여부를 저장하는 상태
 
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getUserData(1); // 예시로 사용자 ID가 1인 데이터 가져오기
+                setUserData(response.data); // 가져온 데이터를 state에 저장
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+        fetchData();
+    }, []); // 마운트될 때 한 번만 실행
+
+    useEffect(() => {
+        // 이 페이지가 처음 렌더링될 때, 기존 정보를 불러와서 registerInfo 상태에 설정
+        setRegisterInfo(userData);
+    }, [userData]); // userData가 변경될 때마다 실행
+
+    useEffect(() => {
+        const updateUserData = async () => {
+            try {
+                if (isModified) { // 수정 사항이 있는 경우에만 patch 진행
+                    const response = await patchUserData(userData.id, registerInfo);
+                    console.log('User data updated successfully:', response);
+                    setIsModified(false); // patch 이후 수정 사항 초기화
+                }
+            } catch (error) {
+                console.error('Error updating user data:', error);
+            }
+        };
+        updateUserData();
+    }, [isModified, registerInfo, userData]);
+
+    
     const handleImageChange = (e) => {
         const file = e.target.files[0]; // 선택된 파일
         if (file) {
@@ -28,9 +66,8 @@ function EditProfile(){
         } else {
         setProfileImage(null); // 파일이 선택되지 않은 경우 프로필 이미지를 초기화
         }
+        setIsModified(true); // 수정 사항 발생
     };
-
-    const [registerInfo, setRegisterInfo] = useRecoilState(registerInfoState);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -38,6 +75,8 @@ function EditProfile(){
             ...prevInfo,
             [name]: value
         }));
+        setIsModified(true); // 수정 사항 발생
+
     };
     
     return(
@@ -108,12 +147,17 @@ function EditProfile(){
                         <Text fontSize='15px' MarginRight='35px'>성별</Text>                      
                         <Container Width='400px' Height='40px'>
                             <label class='radio-label'>
-                            <input type="radio" name="gender" value={registerInfo.gender} onChange={handleInputChange}/>
-                                <span>여성</span>
-                            </label>
-                            <label class='radio-label'>
-                            <input type="radio" name="gender" value={registerInfo.gender} onChange={handleInputChange}/>
-                                <span>남성</span>
+                            <input type="radio" name="gender" value="0" // 여성을 나타내는 값
+                                checked={registerInfo.gender === "0"} // gender가 0일 때 체크됨
+                                onChange={handleInputChange}
+                            />
+                            <span>여성</span>
+                            <input type="radio" name="gender" value="1" // 남성을 나타내는 값
+                                checked={registerInfo.gender === "1"} // gender가 1일 때 체크됨
+                                onChange={handleInputChange}
+                            />
+                            <span>남성</span>
+
                             </label>
                         </Container>
                     </Container>
@@ -121,7 +165,7 @@ function EditProfile(){
                     <Container Height='45px' MarginTop='20px'>
                         <Text fontSize='15px' MarginRight='10px'>생년월일</Text>                      
                         <Container Width='400px' Height='40px' >
-                            <Input type="text" name="birth" value={registerInfo.date} onChange={handleInputChange} placeholder="생년월일" />
+                            <Input type="date" name="date" value={registerInfo.date} onChange={handleInputChange} placeholder="생년월일" />
                         </Container>
                     </Container>
                     <Container Height='230px' MarginTop='30px' Align='flex-start'>

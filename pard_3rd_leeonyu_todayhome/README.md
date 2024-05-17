@@ -5,16 +5,16 @@
 
 ### 반응형 웹
 #### labtop
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 #### tablet
-<img src="image-5.png" alt="alternative text" width="700" height="auto">
+<img src="img/image-5.png" alt="alternative text" width="700" height="auto">
 
 #### mobile
-<img src="image-5.png" alt="alternative text" width="500" height="auto">
+<img src="img/image-5.png" alt="alternative text" width="500" height="auto">
 
 ### Recoil
-<img src="image-7.png" alt="alternative text" width="300" height="auto"><img src="image-8.png" alt="alternative text" width="300" height="auto"> <img src="image-9.png" alt="alternative text" width="400" height="auto">
+<img src="img/image-7.png" alt="alternative text" width="300" height="auto"><img src="img/image-8.png" alt="alternative text" width="300" height="auto"> <img src="img/image-9.png" alt="alternative text" width="400" height="auto">
 
 이메일과 비밀번호 저장 및 수정
 
@@ -27,16 +27,16 @@
 ## 과제설명
 ### 페이지 별 연결하기
 목적 : 모든 페이지 별 페이지 이동에 대한 연습을 하는 부분!
-![alt text](image.png)
+![alt text](img/image.png)
 
 #### RegisterPage
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 #### Profile
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 #### EditPage
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 한줄평:
 기본 스타일을 버튼으로 한게 많아 `styled link`를 이용하여 `route`응용

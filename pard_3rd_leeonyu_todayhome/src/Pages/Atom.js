@@ -8,8 +8,8 @@ export const registerInfoState = atom({
         nickname: '',
         homepage: '',
         gender: 0,
-        date:'',
-        profileImage:'',
-        introduce:''
+        date: '',
+        profileImage: '',
+        introduce: ''
     }
 });
