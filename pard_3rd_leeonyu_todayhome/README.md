@@ -1,3 +1,42 @@
+# HW#5
+## 과제 목표
+- JOSN server를 사용해서 server와 통신하는 AXIOS API 호출 방식에 익숙해질 수 있다.
+- GET, PATCH를 수행할 수 있다.
+
+## 초기 설정
+- 라이브러리 설치 및 활성화
+```
+// 라이브러리 설치
+$ npm install -g json-server
+
+// 서버 활성화
+// 포트번호는 client port번호를 제회한 모든 번호 가능
+$ json-server --watch ./src/db/data.json --port 3001
+```
+- data.json 생성
+```
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "loy7153@handong.ac.kr",
+      "password": "1234",
+      "nickname": "이온유",
+      "homepage": "www.naver.com",
+      "gender": "0",
+      "date": "2003-04-03",
+      "progileImage": "",
+      "introduce": "안녕하세요 저는 온유예요!"
+    }
+  ]
+}
+```
+### 결과
+- recoil과 결과 유사
+
+### 느낀점
+- 이미지를 patch와 get구현을 못했는데 다음에 해보고 싶다.
+
 # HW#4
 ## 과제 목표
 - 전역 상태 라이브러리 Recoil을 사용할 수 있다.
